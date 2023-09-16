@@ -10,18 +10,32 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			
+			let n = arr.length
+			if(n <= 1) return Number.MIN_VALUE;
+			let max = Number.MIN_VALUE
+			let secMax = Number.MIN_VALU
+
+			for (let i = 0; i < n; i++) {
+				if(arr[i] > max){
+					secMax = max
+					max = arr[i]
+				}
+				if(arr[i] < max && arr[i] > secMax){
+					secMax=arr[i]
+				}
+			}
+			return secMax
 		}
 
-		function Main() {
-			var n = prompt("Enter the number of elements");
-			var arr = [];
-			for (var i = 0; i < n; i++) {
-				arr[i] = prompt("Enter element " + (i+1));
-			}
-			alert(secondHighest(arr));
-		}
-		Main();
+		// function Main() {
+		// 	var n = prompt("Enter the number of elements");
+		// 	var arr = [];
+		// 	for (var i = 0; i < n; i++) {
+		// 		arr[i] = prompt("Enter element " + (i+1));
+		// 	}
+		// 	alert(secondHighest(arr));
+		// }
+		// Main();
 	</script>
 
     <script type="text/javascript" src="./script.js">
